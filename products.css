@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800&family=Raleway:wght@400;500;800&display=swap');
+
+/*root values  */
+
+:root{
+  
+  /* colors */
+  --primary : #F8DE7E;
+  --secondary : #3F84E5;
+  --other: #230C0F;
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  color: white;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Raleway', sans-serif
+  /* background-color: var(--primary); */
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* header */
+.header{
+  /* background-color: rgb(78, 74, 74); */
+  background-color: rgb(54, 52, 52);
+  height: 80vh;
+  color: var(--primary);
+  width: 100%;
+}
+.header>img{
+  mix-blend-mode: overlay;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.container-text{
+    position: absolute;
+    z-index: 1000;
+    max-width: 800px;
+    position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  padding:2rem;
+    padding-top: 7em;
+    margin: 0 auto;
+}
+.container-text h1{
+  font-weight: 800;
+  font-size: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.container-text p{
+  font-weight: 500;
+  font-size: 1.2em;
+  text-align: center;
+  color: rgb(160, 171, 182);
+  padding-bottom: 2em
+}
+.btn-container{
+  width: 100%;
+}
+.btn-container button{
+  position: absolute;
+  max-width: 200px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  outline: none;
+  border: none;
+  color: white;
+  background-color: var(--secondary);
+  border-radius: 2em;
+  padding: 1em 2em;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+.btn-container button:hover{
+  background-color: white;
+  color: var(--secondary)
+}
+h2{
+  padding: 1em 0;
+  color: var(--other);
+  margin: auto;
+  font-size: 3rem;
+  text-align: center;
+  max-width: 500px
+}
+
+
+/* Product Array */
+.insertProducts{
+  display: flex;
+  max-width: 900px;
+  justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  margin: auto;
+  /* overflow-x: scroll; */
+}
+.product_arr{
+  margin: 0 2em;
+  color: var(--primary);
+  text-transform: uppercase;
+  border: 0;
+  padding: 1em 3em;
+  background-color: var(--other);
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer
+}
+.product_arr:hover{
+  outline: 3px solid var(--primary);
+  color: var(--other);
+  background-color: transparent;
+}
+.products{
+  color: var(--other);
+  display: grid;
+  grid-template-columns: repeat(3,minmax(300px, 1fr));
+  width: 100%;
+  padding: 0 3em;
+  gap: 20px;
+}
+.products_img{
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center center;
+  padding-bottom: 2em;
+}
+.product_container{
+  max-height: 500px;
+  background-color: #e0e0df;
+  padding: 2em 1em;
+  border-radius: 10px;
+  padding-bottom:.5em;
+  display: none
+}
+.product_container > div{
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.product_container > p{
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  /* color: rgb(73, 72, 72); */
+  color:grey;
+  padding-bottom:1em;
+}
+span{
+  font-weight: 800;
+  font-size:30px
+}
+
+.product_container > button{
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary);
+  /* color: var(--other); */
+  color: white;
+  border: none;
+  padding: 1em 2em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.product_container > button:hover{
+  background-color: #5177ce
+}
+.show{
+  display: block
+}
+/* media queries max-with 1200px */
+@media(max-width: 1200px){
+  .products{
+  grid-template-columns: repeat(2,minmax(300px, 1fr));
+}
+}
+/* media queries max-with 950px */
+@media(max-width: 920px){
+  .header{
+    height: 80vh
+  }
+  .container-text{
+    padding-top: 12em;
+  }
+  .insertProducts{
+  overflow-x: scroll;
+}
+}
+
+/* media queries max-with 750px */
+@media(max-width: 750px){
+  .header{
+    height: 53vh
+  }
+  .container-text{
+    padding-top: 3em;
+  }
+  .container-text h1{
+  font-weight: 800;
+  font-size: 3em;
+  text-align: center;
+  text-transform: uppercase;
+  /* line-height: 1em; */
+}
+.container-text p{
+  padding: 1em 0;
+}
+h2{
+  padding-top: 1em;
+  font-size: 2rem;
+}
+.insertProducts{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.product_arr{
+  margin: 0 1em;
+  padding: .5em 1em;
+}
+.products{
+  grid-template-columns: repeat(1,minmax(300px, 1fr));
+  padding: 1em
+}
+.product_container{
+  padding: 1em 1em
+}
+.product_container > p{
+  font-size: 12px;
+}
+span{
+  font-size: 30px;
+}
+.product_container > button{
+  padding: .5em 1em;
+  border-radius: 5px
+}
+}
+
+/* media queries max-with 450px */
+@media(max-width: 450px){
+  .container-text{
+    padding-top: 4em;
+  }
+  .container-text h1{
+  font-weight: 800;
+  font-size: 1.7em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5em;
+}
+.container-text p{
+  font-weight: 500;
+  font-size: .7em;
+  text-align: center;
+  color: rgb(160, 171, 182);
+  padding-bottom: 2em
+}
+.btn-container button{
+  padding: .3em .3em;
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+.insertProducts{
+  padding-left: .4em;
+  padding-right: .4em;
+}
+.product_container{
+  padding: 1em .5em
+}
+.product_arr{
+  margin: 0 .5em;
+  font-size: 12px;
+  padding: .5em 1em;
+}
+.products{
+  grid-template-columns: 1fr;
+}
+.product_container > div{
+  font-size: 1.3rem;
+}
+span{
+  font-size:20px
+}
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
