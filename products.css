@@ -232,6 +232,13 @@ span{
 .show{
   display: block
 }
+footer{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+footer p{
+  margin-bottom: .5em;
+}
 /* media queries max-with 1200px */
 @media(max-width: 1200px){
   .products{
@@ -298,6 +305,9 @@ span{
   padding: .5em 1em;
   border-radius: 5px
 }
+footer{
+  grid-template-columns:1fr;
+}
 }
 
 /* media queries max-with 450px */
@@ -344,6 +354,10 @@ span{
 }
 span{
   font-size:20px
+}
+footer{
+  display: grid;
+  grid-template-columns: 1fr;
 }
 }
 
